@@ -1,0 +1,260 @@
+html,body {
+	height: 100%;
+}
+
+body.my-login-page {
+	background-color: #f7f9fb;
+	font-size: 14px;
+}
+.welcome{
+	text-align: center;
+	color: aquamarine;
+}
+.my-login-page .brand {
+	width: 400px;
+	height: 300px;
+	overflow: hidden;
+	margin: 40px auto;
+	box-shadow: 0 4px 8px rgba(0,0,0,.05);
+	position: relative;
+	z-index: 1;
+}
+
+.my-login-page .brand img {
+	width: 100%;
+
+}
+
+.my-login-page .card-wrapper {
+	width: 400px;
+}
+
+.my-login-page .card {
+	border-color: transparent;
+	box-shadow: 0 4px 8px rgba(0,0,0,.05);
+}
+
+.my-login-page .card.fat {
+	padding: 10px;
+}
+
+.my-login-page .card .card-title {
+	margin-bottom: 30px;
+}
+
+.my-login-page .form-control {
+	border-width: 2.3px;
+}
+
+.my-login-page .form-group label {
+	width: 100%;
+}
+
+.my-login-page .btn.btn-block {
+	padding: 12px 10px;
+}
+
+.my-login-page .footer {
+	margin: 40px 0;
+	color: #888;
+	text-align: center;
+}
+
+@media screen and (max-width: 425px) {
+	.my-login-page .card-wrapper {
+		width: 90%;
+		margin: 0 auto;
+	}
+}
+
+@media screen and (max-width: 320px) {
+	.my-login-page .card.fat {
+		padding: 0;
+	}
+
+	.my-login-page .card.fat .card-body {
+		padding: 15px;
+	}
+}
+/* for the admin dashboard */
+:root {
+	--main-bg-color: #0275d8;
+	--main-text-color: #0275d8;
+	--second-text-color: #0275d8;
+	--second-bg-color: #c1efde;
+  }
+  
+  .primary-text {
+	color: var(--main-text-color);
+  }
+  
+  .second-text {
+	color: var(--second-text-color);
+  }
+  
+  .primary-bg {
+	background-color: var(--main-bg-color);
+  }
+  
+  .secondary-bg {
+	background-color: var(--second-bg-color);
+  }
+  
+  .rounded-full {
+	border-radius: 100%;
+  }
+  
+  #wrapper {
+	overflow-x: hidden;
+	background-image: linear-gradient(
+	  to right,
+	  #0275d8,
+	  #0275d8,
+	  #5388b7,
+	  #43637f,
+	  hsl(208, 51%, 42%)
+	);
+  }
+  
+  #sidebar-wrapper {
+	min-height: 100vh;
+	margin-left: -15rem;
+	-webkit-transition: margin 0.25s ease-out;
+	-moz-transition: margin 0.25s ease-out;
+	-o-transition: margin 0.25s ease-out;
+	transition: margin 0.25s ease-out;
+  }
+  #sidebar-wrapper .sidebar-heading {
+	padding: 0.875rem 1.25rem;
+	font-size: 1.2rem;
+  }
+  
+  #sidebar-wrapper .list-group {
+	width: 15rem;
+  }
+  
+  #page-content-wrapper {
+	min-width: 100vw;
+  }
+  
+  #wrapper.toggled #sidebar-wrapper {
+	margin-left: 0;
+  }
+  
+  #menu-toggle {
+	cursor: pointer;
+  }
+  
+  .list-group-item {
+	border: none;
+	padding: 20px 30px;
+  }
+  
+  .list-group-item.active {
+	background-color: transparent;
+	color: var(--main-text-color);
+	font-weight: bold;
+	border: none;
+  }
+  
+  @media (min-width: 768px) {
+	#sidebar-wrapper {
+	  margin-left: 0;
+	}
+  
+	#page-content-wrapper {
+	  min-width: 0;
+	  width: 100%;
+	}
+  
+	#wrapper.toggled #sidebar-wrapper {
+	  margin-left: -15rem;
+	}
+  }
+.add_asset{
+	display: block;
+margin: 0 auto;
+width: 50%;
+border-radius: 10px;
+
+}
+
+.card_for_detail_request{
+	width: 100%; /* Or any other width you want */
+	text-align: center;
+}
+#card_for_detail_request{
+	width: 50%; /* Or any other width you want */
+  margin-left: auto;
+  margin-right: auto;
+  align-items: center;
+}
+
+  /* for employee notification  */
+
+  /* * {
+	box-sizing: border-box;
+  }
+  
+  body {
+	font-family: Arial;
+	padding: 20px;
+	background: #f1f1f1;
+  }  */
+  .leftcolumn {   
+	float: left;
+	width: 100%;
+  }
+  
+  .card {
+	 background-color: white;
+	 padding: 20px;
+	 margin-top: 20px;
+  }
+  
+  .row:after {
+	content: "";
+	display: table;
+	clear: both;
+  }
+  .asset_search{
+	background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    padding: 7% 0;
+}
+  .asset_search input[type="search"]{
+    width: 50%;
+    padding: 1%;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+}
+
+  @media screen and (max-width: 800px) {
+	.leftcolumn, .rightcolumn {   
+	  width: 100%;
+	  padding: 0;
+	}
+  }  
+  #loader {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 9999;
+	border: 16px solid #f3f3f3;
+	border-top: 16px solid #3498db;
+	border-radius: 50%;
+	width: 120px;
+	height: 120px;
+	animation: spin 2s linear infinite;
+  }
+  
+  @keyframes spin {
+	0% { transform: rotate(0deg); }
+	100% { transform: rotate(360deg); }
+  }
+#navbarSupportedContent{
+	margin-right: 10%;
+}	
