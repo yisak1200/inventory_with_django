@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee page</title>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,200;1,200;1,500&family=Dancing+Script&family=Ubuntu:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    {%load static%}
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/Style.css' %}"
+    />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-aO/1r63CtWp14Z+zvCZJ9LeMmPypdWxlG8VyL0oNpFFlFJwN5O/8WTvZ/Q5F0j5PCJVi8tWJqlQdoaVVtgTXw==" crossorigin="anonymous" /> -->
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,200;1,200;1,500&family=Ubuntu:wght@500&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+      integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc"
+      crossorigin="anonymous"
+    ></script>
+    <script src="code.js"></script>
+  </head>
+  <body>
+    <!--Navbar-->
+    <nav class="navbar navbar-dark bg-dark navbar-expand-sm sticky-top">
+      <div class="container-fluid">
+        <a href="{% url 'employee_index' %}" class="navbar-brand dance-font"
+          ><span class="text-danger">Employee</span>
+          <span class="text-warning">Page</span></a
+        >
+        <span>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle second-text fw-bold"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  {% if user.user_profile %}
+                  <img
+                    style="border-radius: 50%"
+                    src="/media/{{request.user.user_profile.user_img}}"
+                    alt="profile picture"
+                    width="50px"
+                    height="50px"
+                  />
+                  {% else %}
+                  <img
+                    style="border-radius: 50%"
+                    src="{%static 'img/user_profile.jpg'%}"
+                    alt="profile picture"
+                    width="50px"
+                    height="50px"
+                  />
+                  {% endif %}
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <div class="list_profile">
+                    <li>
+                      <a class="dropdown-item" href="#"
+                        >{% if user.user_profile %}
+                        <li>
+                          <img
+                            style="border-radius: 50%"
+                            src="/media/{{request.user.user_profile.user_img}}"
+                            alt="profile picture"
+                            width="50px"
+                            height="50px"
+                          />
+                        </li>
+                        {% else %}
+                        <li>
+                          <img
+                            style="border-radius: 50%"
+                            src="{%static 'img/user_profile.jpg'%}"
+                            alt="profile picture"
+                            width="50px"
+                            height="50px"
+                          />
+                        </li>
+                        {% endif %} {{user.first_name}} {{user.last_name}}</a
+                      >
+                    </li>
+                    <li>
+                      <a
+                        class="dropdown-item"
+                        href="{% url 'change_password_emp' %}"
+                      >
+                        <i class="fas fa-lock me-2"></i> Chane password</a
+                      >
+                    </li>
+                    <!-- <li><a class="dropdown-item" href="#"> <i class="fas fa-user-edit"></i>
+                            Edit Profile</a></li> -->
+                    <li>
+                      <a class="dropdown-item" href="{% url 'logout' %}">
+                        <i class="fas fa-power-off me-2"></i>Logout</a
+                      >
+                    </li>
+                  </div>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </span>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#Resturant-navbar"
+          aria-controls="navbar"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="Resturant-navbar">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item px-3">
+              <a href="{% url 'employee_index'%}" class="nav-link">
+                <i class="fa fa-home"></i> Home</a
+              >
+            </li>
+
+            <li class="nav-item px-3">
+              <a href="{% url 'emp_req_notification' %}" class="nav-link">
+                <i class="fas fa-bell"></i> Notification ({{total_request}})</a
+              >
+            </li>
+            <li class="nav-item px-3">
+              <a href="{% url 'employee_request' %}" class="nav-link">
+                <i class="fas fa-shopping-cart"></i> Request for Asset</a
+              >
+            </li>
+            <li class="nav-item px-3">
+              <a href="{% url 'change_password_emp' %}" class="nav-link">
+                <i class="fas fa-lock me-2"></i>Change Password</a
+              >
+            </li>
+            <li class="nav-item px-3">
+              <a href="{% url 'logout' %}" class="nav-link"
+                ><i class="fas fa-power-off me-2"></i>Logout</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    {% block start %} {% endblock %}
+  </body>
+</html>

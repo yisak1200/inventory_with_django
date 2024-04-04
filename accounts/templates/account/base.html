@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <title> <img class="logo_img" src="{% static 'img/logo_for_login.jpg' %}" alt=""> Inventory Management System</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	{%load static%}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/Style.css' %}">
+    <script>
+        document.onreadystatechange = function() {
+          if (document.readyState !== "complete") {
+            document.querySelector("body").style.visibility = "hidden";
+            document.querySelector("#loader").style.visibility = "visible";
+          } else {
+            document.querySelector("#loader").style.display = "none";
+            document.querySelector("body").style.visibility = "visible";
+          }
+        };
+      </script>
+</head>
+<body>
+    <div id="loader">Loading .....</div>
+{% block start %}
+{% endblock %}
+</body>
+</html>

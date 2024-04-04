@@ -1,0 +1,26 @@
+{% extends 'employee_temp/emp_base.html' %}
+{% block start %}
+<div class="container_detail_card">
+    <div class="card" id ="card_for_detail_request" style="width: 30rem;">
+        <div class="card-body">
+            <h5 class="card-title">Detail About The Accepted Request</h5>
+            <p class="card-text">Asset name : {{accepted_req_detail.Asset_name}}
+            <p class="card-text">Amount Of Asset : {{accepted_req_detail.Amount_of_asset}} </p>
+            <p class="card-text">Requested Accepted date : {{accepted_req_detail.Request_accepted_date}}</p>
+            <p class="card-text">Requested Status :{{accepted_req_detail.Request_status}}  </p>
+            <form method="post">
+                {% csrf_token %}
+                <div class="form-group m-0">
+                    {% if accepted_req_detail.order_number%}
+                    <p class="card-text" >Order number : {{accepted_req_detail.order_number}}</p>
+                    {%else%}
+                    <button type="submit" class="btn btn-success btn-block">
+                      Get Order Number
+                    </button>
+                    {% endif %}
+                 </div>
+        </form>
+            </div>
+            </div>
+            
+{% endblock %}

@@ -1,0 +1,101 @@
+{% extends 'employee_temp/emp_base.html' %}
+    {% block start %}
+     <!--Slider-->
+     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            {% load static %}
+            <img src="{%static 'img/A-Startups-Guide-to-Ecommerce-Inventory-Management.jpg'%}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            {% load static %}
+            <img src="{%static 'img/M47P11 especialista-de-inventario.jpg'%}" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            {% load static %}
+            <img src="{%static 'img/Warehouse Inventory Management.jpg'%}" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      <section class="menus" id="menus">
+        <div class="menu-1 bg-dark p-5" id="Menus">
+            <div class="container">
+                <div class="grid">
+                    <div class="row align-item-center">
+                            <h1 style="text-align: center;" class="dance-font fw-bold text-white">Description <span class="text-warning"> About The System</span></h1>
+                            <p style="text-align: center;" class="lead fst-italic text-white">The Employee Page of the Inventory Management System is where you, as an employee, can log in to make requests for assets and receive notifications regarding your requests. This page serves as a centralized platform for managing asset requests and approvals.
+
+                                Once you log in, you will be directed to a dashboard that displays any pending requests and notifications related to your requests. From here, you can create new asset requests, view the status of previous requests, and track the progress of approved requests.
+                                
+                                To create a new asset request, simply fill out the required information such as the asset type, quantity, and reason for the request. Once submitted, your request will be reviewed by the authorized personnel who will either approve or reject it based on the availability of the requested asset.
+                                
+                                If your request is approved, you will receive a notification with details about when and where to collect the asset. In case of rejection, you will also receive a notification with a reason for the rejection.
+                                
+                                The Employee Page of the Inventory Management System is designed to streamline the asset request process, ensuring that employees have access to the necessary tools and equipment they need to perform their jobs effectively.
+                                </p>
+                        </div>
+                        <!-- <div class="col-md-6">
+                            <video controls="" autoplay="" class="img-fluid">
+                                <source src="005 Downloading data from the input.mp4">
+
+                            </video>
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- <div class="menu-2 bg-white p-5" id="Menus">
+            <div class="container"> -->
+                <!-- <div class="grid">
+                    <div class="row align-item-center">
+                        <div class="col-md-6">
+                            <video controls="" autoplay="" class="img-fluid">
+                                <source src="005 Downloading data from the input.mp4">
+
+                            </video>
+                        </div>
+                        <div class="col-md-6">
+                            <h1 class="dance-font fw-bold">Love <span class="text-warning"> Food</span></h1>
+                            <p class="lead fst-italic">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat autem dicta quaerat impedit quidem fugit vitae beatae iusto, suscipit possimus omnis excepturi enim at. Harum modi blanditiis iste. Quibusdam voluptatum tempora temporibus pariatur incidunt praesentium expedita nemo iusto, veniam non unde sunt, fugit quam commodi atque laboriosam porro similique sequi?</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+
+        </div> -->
+        <!-- <div class="menu-3 bg-dark p-5" id="Menus">
+            <div class="container">
+                <div class="grid">
+                    <div class="row align-item-center">
+                        <div class="col-md-6 text-white">
+                            <h1 class="dance-font fw-bold">How to <span class="text-warning"> Eat</span></h1>
+                            <p class="lead fst-italic">Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat autem dicta quaerat impedit quidem fugit vitae beatae iusto, suscipit possimus omnis excepturi enim at. Harum modi blanditiis iste. Quibusdam voluptatum tempora temporibus pariatur incidunt praesentium expedita nemo iusto, veniam non unde sunt, fugit quam commodi atque laboriosam porro similique sequi?</p>
+                        </div>
+                        <div class="col-md-6">
+                            <video controls="" autoplay="" class="img-fluid">
+                                <source src="005 Downloading data from the input.mp4">
+
+                            </video>
+                        </div>
+                    </div>
+                </div>
+            </div> -->
+
+    <!-- </div> -->
+  </section>
+    {% endblock %}

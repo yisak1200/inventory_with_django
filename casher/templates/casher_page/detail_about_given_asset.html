@@ -1,0 +1,38 @@
+{% extends 'casher_page/casher_base.html' %}
+{% block start %}
+<div class="container_detail_card">
+<div class="card" id ="card_for_detail_request" style="width: 30rem;">
+    <div class="card-body">
+      {% if employe_req_order_num.user.user_profile %}
+      <img src="/media/{{employe_req_order_num.user.user_profile.user_img}}" style="border-radius: 50%;" width="100px" height = "100px" alt="">
+      {% else %}
+      {% load static %}
+      <img style="border-radius: 50%;" src="{%static 'img/user_profile.jpg'%}" alt="profile picture" width="50px" height="50px">
+      {% endif %}
+      <h5 class="card-title">Detail About The Asset To Be Given</h5>
+      <p class="card-text">Employee name : {{employe_req_order_num.user.first_name}} {{employe_req_order_num.user.last_name}}</p>
+      <p class="card-text">Requested Asset : {{employe_req_order_num.Asset_name}} </p>
+      <!-- <p class="card-text">Reason for Request : {{employe_req_order_num.Reaso_why_you_need_asset}} </p>
+      <p class="card-text">Asset Requested date : {{employe_req_order_num.Requested_date}}</p> -->
+      <p class="card-text">Amount of Asset To Be Given: {{ employe_req_order_num.Amount_of_asset }}</p>
+      <form method="post" >
+        {% csrf_token %}
+        <div class="mb-3">
+          <b> <label for="asset_name">Serial number</label></b>
+          <textarea class="form-control" name="serial_number" id="exampleFormControlTextarea1" rows="3" required placeholder="don't forget to register all serial number to be given"></textarea>
+        </div>
+      <br>
+      <div class="mb-3">
+        <b> <label for="asset_name">Asset pin number</label></b>
+        <textarea class="form-control" name="asset_pin_number" id="exampleFormControlTextarea1" rows="3" required placeholder="don't forget to register all pin number to be given"></textarea>
+      </div>
+      <div class="form-group m-0">
+        <button type="submit" class="btn btn-success btn-block">
+          Give The Asset
+        </button>
+        </div>
+        </form>
+        </div>
+  </div>
+</div>
+  {% endblock %}

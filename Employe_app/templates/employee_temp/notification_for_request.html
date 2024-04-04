@@ -1,0 +1,26 @@
+{% extends 'employee_temp/emp_base.html' %}
+{% block start %}
+  <div class="row">
+    <div class="leftcolumn">
+      <div class="card">
+        <h1><span class="text-success">Accepted Request</span></h1>
+        <ul>
+          {% for acc in accepted %}
+          <a style="text-decoration: none; color: black;"  href="{% url 'detail_for_accepted_request' acc.id %}"><li><h3> Asset name: {{acc.Asset_name.Asset_name}} </h3></li></a>
+            {% endfor %}
+          </ul>
+            </div>
+      </div>
+      
+      <div class="card">
+        <h1><span class="text-danger">Rejected Request</span></h1>
+        <ul>
+          {% for rej in rejected %}
+          <a style="text-decoration: none; color: black;"  href="#"><li><h3> Asset name: {{rej.Asset_name.Asset_name}} </h3></li></a>
+          {% endfor %}
+      </ul>
+      </div>
+    </div>
+  </div>
+  
+{% endblock %}

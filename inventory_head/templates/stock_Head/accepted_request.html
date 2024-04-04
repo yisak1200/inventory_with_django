@@ -1,0 +1,47 @@
+{% extends 'stock_Head/base_for_stock_head_page.html' %}
+{% block start %}
+<div class="container-fluid px-4">
+    <div class="row g-3 my-2">
+    </div>
+    <div class="row my-5">
+        <h3 style="text-align: center;" class="fs-4 mb-3">Accepted Employee Requstes</h3>
+        <div class="col">
+            <table class="table bg-white rounded shadow-sm  table-hover">
+                <thead>
+                    <tr>
+                        <th scope="col">Asset Name</th>
+                        <th scope="col">Amount of Asset</th>
+                        <th scope="col">Employee Name</th>
+                        <th scope="col">Requested Accepted Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for accepted in accepted_request %}
+                    <tr>
+                        <td> {{accepted.Asset_name.Asset_name}}</td>
+                        <td>{{accepted.Amount_of_asset}}</td>
+                        <td>{{accepted.user.first_name}} {{accepted.user.last_name}}</td>
+                        <td>{{accepted.Request_accepted_date}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+</div>
+</div>
+<!-- /#page-content-wrapper -->
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+var el = document.getElementById("wrapper");
+var toggleButton = document.getElementById("menu-toggle");
+
+toggleButton.onclick = function () {
+el.classList.toggle("toggled");
+};
+</script>
+{% endblock %}
